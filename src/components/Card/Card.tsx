@@ -1,5 +1,11 @@
+import React from "react";
 import { SCard } from "./Card.styled";
 
-export const Card = () => {
-  return <SCard>Card</SCard>;
+interface Props {
+  name: string;
+  url: string;
+}
+
+export const Card: React.FC<Props> = ({ name }) => {
+  return <SCard>{name}</SCard>;
 };
