@@ -1,1 +1,1 @@
-{"version":3,"sourceRoot":"","sources":["../scss/partials/_reset.scss","../scss/index.scss","../scss/partials/_vars.scss"],"names":[],"mappings":"AAAA;AAAA;AAAA;EAGE;EACA;EACA;;;ACFF;EACE,YCJY","file":"index.css"}
+{"version":3,"sourceRoot":"","sources":["../scss/partials/_reset.scss","../scss/index.scss","../scss/partials/_vars.scss"],"names":[],"mappings":"AAAA;AAAA;AAAA;EAGE;EACA;EACA;;;ACFF;EACE,YCJY;EDKZ,aCHW","file":"index.css"}
