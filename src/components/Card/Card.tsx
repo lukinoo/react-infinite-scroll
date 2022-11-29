@@ -1,3 +1,5 @@
+import { SCard } from "./Card.styled";
+
 export const Card = () => {
-  return <div>Card</div>;
+  return <SCard>Card</SCard>;
 };
