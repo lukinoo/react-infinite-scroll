@@ -30,7 +30,6 @@ export const InfiniteScrollContextProvider: React.FC<
 
     // if user scroll at the bottom fetchPokemonAPi will get calls
     if (scrollTop + innerHeight + 1 >= scrollHeight) {
-      console.log("scrolled");
       fetchPokemonApi();
     }
   };
