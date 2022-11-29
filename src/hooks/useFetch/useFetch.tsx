@@ -38,5 +38,5 @@ export const useFetch = (url: string): TUseFetch<TPokemon> => {
     fetchPokemonApi();
   }, [url]);
 
-  return [pokemons, isLoading];
+  return [pokemons, isLoading, fetchPokemonApi];
 };
