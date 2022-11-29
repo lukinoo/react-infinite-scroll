@@ -12,12 +12,13 @@ type TPokemon = {
 export const useFetch = (url: string): TUseFetch<TPokemon> => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [pokemons, setPokemons] = useState<Array<TPokemon>>([]);
+  const [offset, setOffset] = useState(0);
 
   const fetchPokemonApi = async () => {
     setIsLoading(true);
 
     try {
-      const { data } = await axios.get(url);
+      const { data } = await axios.get(url + offset);
       const { results }: { results: Array<TPokemon> } = data;
 
       const new_pokemons: Array<TPokemon> = [];
@@ -26,12 +27,14 @@ export const useFetch = (url: string): TUseFetch<TPokemon> => {
         new_pokemons.push({ ...p, id: uuidv4() })
       );
 
-      setPokemons(new_pokemons);
+      setPokemons((c) => [...c, ...new_pokemons]);
       setIsLoading(false);
     } catch (err) {
       console.error(err);
       setIsLoading(false);
     }
+
+    setOffset((c) => c + 10);
   };
 
   useEffect(() => {
