@@ -1,3 +1,6 @@
+@import "./partials/reset";
+@import "./partials/vars";
+
 body {
-  background: royalblue;
+  background: $primaryBlue;
 }
