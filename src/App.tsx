@@ -1,6 +1,6 @@
-import { Card } from "./components/Card";
 import { useFetch } from "./hooks/useFetch";
 import { Loading } from "./components/Loading";
+import { InfiniteScroll } from "./view/InfiniteScroll";
 
 const BASE_URL = "https://pokeapi.co/api/v2/pokemon?limit=10";
 
@@ -13,9 +13,7 @@ const App = () => {
 
   return (
     <div className="App">
-      {pokemons.map((pokemon) => {
-        return <Card key={pokemon.id} {...pokemon} />;
-      })}
+      <InfiniteScroll />
     </div>
   );
 };
