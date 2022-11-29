@@ -7,4 +7,5 @@ interface TPokemon {
 export type TISContext = {
   pokemons: Array<TPokemon>;
   isLoading: boolean;
+  fetchPokemonApi: () => Promise<void>;
 };
