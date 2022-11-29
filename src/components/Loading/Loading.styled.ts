@@ -12,8 +12,8 @@ const loader_animation = keyframes`
 export const SLoading = styled.div`
   display: inline-block;
   position: relative;
-  width: 5rem;
-  height: 5rem;
+  width: 1.1rem;
+  height: 1.1rem;
   div {
     display: block;
     position: absolute;
