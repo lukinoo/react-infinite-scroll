@@ -1,12 +1,13 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
+import type { TUseFetch } from "./useFetch.types";
 
 type TPokemon = {
   name: string;
   url: string;
 };
 
-export const useFetch = (url: string) => {
+export const useFetch = (url: string): TUseFetch<TPokemon> => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [pokemons, setPokemons] = useState<Array<TPokemon>>([]);
 

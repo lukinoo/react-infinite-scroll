@@ -1,1 +1,1 @@
-export interface TUsefetch {}
+export type TUseFetch<T> = [Array<T>, boolean];
