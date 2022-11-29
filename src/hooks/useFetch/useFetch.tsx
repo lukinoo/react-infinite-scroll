@@ -16,27 +16,27 @@ export const useFetch = (url: string): TUseFetch<TPokemon> => {
   const fetchPokemonApi = async () => {
     setIsLoading(true);
 
-    axios
-      .get(url)
-      .then(({ data }) => {
-        const { results }: { results: Array<TPokemon> } = data;
+    try {
+      const { data } = await axios.get(url);
+      const { results }: { results: Array<TPokemon> } = data;
 
-        const new_pokemons: Array<TPokemon> = [];
-        results.forEach((p: TPokemon) =>
-          new_pokemons.push({ ...p, id: uuidv4() })
-        );
+      const new_pokemons: Array<TPokemon> = [];
 
-        setPokemons(new_pokemons);
-        setIsLoading(false);
-      })
-      .catch((err: Error) => {
-        console.error(err);
-      });
+      results.forEach((p: TPokemon) =>
+        new_pokemons.push({ ...p, id: uuidv4() })
+      );
+
+      setPokemons(new_pokemons);
+      setIsLoading(false);
+    } catch (err) {
+      console.error(err);
+      setIsLoading(false);
+    }
   };
 
   useEffect(() => {
     fetchPokemonApi();
-  }, [url]);
+  }, []);
 
   return [pokemons, isLoading, fetchPokemonApi];
 };

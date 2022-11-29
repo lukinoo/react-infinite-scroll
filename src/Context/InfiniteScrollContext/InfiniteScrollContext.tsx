@@ -13,10 +13,12 @@ const BASE_URL = "https://pokeapi.co/api/v2/pokemon?limit=10";
 export const InfiniteScrollContextProvider: React.FC<
   TInfiniteScrollContextProvider
 > = ({ children }) => {
-  const [pokemons, isLoading] = useFetch(BASE_URL);
+  const [pokemons, isLoading, fetchPokemonApi] = useFetch(BASE_URL);
 
   return (
-    <InfiniteScrollContext.Provider value={{ pokemons, isLoading }}>
+    <InfiniteScrollContext.Provider
+      value={{ pokemons, isLoading, fetchPokemonApi }}
+    >
       {children}
     </InfiniteScrollContext.Provider>
   );
