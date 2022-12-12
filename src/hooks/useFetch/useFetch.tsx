@@ -34,7 +34,7 @@ export const useFetch = (url: string): TUseFetch<TPokemon> => {
       setIsLoading(false);
     }
 
-    setOffset((c) => c + 10);
+    setOffset((c) => c + 1);
   };
 
   useEffect(() => {
